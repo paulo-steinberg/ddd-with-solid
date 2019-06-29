@@ -1,4 +1,6 @@
 ﻿using System;
+using Solid.SRP;
+using Solid.SRP.Repository;
 
 namespace Solid
 {
@@ -6,7 +8,15 @@ namespace Solid
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            #region SRP
+            Supplier supplier = new Supplier();
+            supplier.ChangeName("Paulo Steinberg");
+
+            ISupplierRepository repository = new SupplierRepository();
+            repository.Save(supplier);
+            #endregion
+
+
         }
     }
 }
