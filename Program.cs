@@ -1,4 +1,5 @@
 ﻿using System;
+using Solid.OCP;
 using Solid.SRP;
 using Solid.SRP.Repository;
 
@@ -16,7 +17,12 @@ namespace Solid
             repository.Save(supplier);
             #endregion
 
+            #region OCP
+            Person person = new Person("Paulo");
+            person.ChangeName("Paulo Steinberg");
 
+            NaturalPerson nPerson = new NaturalPerson("Paulo Steinberg", "123.123.123.12");
+            #endregion
         }
     }
 }
