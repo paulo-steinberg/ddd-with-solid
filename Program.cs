@@ -1,4 +1,5 @@
 ﻿using System;
+using Solid.ISP;
 using Solid.LSP;
 using Solid.OCP;
 using Solid.SRP;
@@ -29,6 +30,11 @@ namespace Solid
             Car car = new Car();
             car.TurnOn();
             car.SpeedUp();
+            #endregion
+
+            #region ISP
+            Invoice invoice = new Invoice();
+            invoice.CreateInvoice();
             #endregion
         }
     }
