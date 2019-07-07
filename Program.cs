@@ -1,4 +1,4 @@
-﻿using System;
+﻿using Solid.DIP.Contracts;
 using Solid.ISP;
 using Solid.LSP;
 using Solid.OCP;
@@ -35,6 +35,13 @@ namespace Solid
             #region ISP
             Invoice invoice = new Invoice();
             invoice.CreateInvoice();
+            #endregion
+
+            #region DIP
+
+            var DIPrepository = new CustomerRepository();
+            var customerService = new CustomerService(DIPrepository);
+
             #endregion
         }
     }
